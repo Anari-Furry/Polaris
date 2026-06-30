@@ -1972,7 +1972,7 @@ function Polaris:CreateWindow(options)
                 local Default = cfg.Default or (Multi and {} or '')
                 local Callback = cfg.Callback or function() end
                 local StrokeAlpha = IsBox and 1 or 0
-                local BgAlpha = IsBox and 1 or 0.6
+                local BgAlpha = IsBox and 0 or 0.6
                 local CurrentOption = Polaris.Flags[Flags] or Default
 
                 if Multi and type(CurrentOption) ~= 'table' then
@@ -1988,7 +1988,7 @@ function Polaris:CreateWindow(options)
                 local DFrame = Instance.new('Frame')
 
                 DFrame.Size = UDim2.new(1, 0, 0, HEADER_HEIGHT)
-                DFrame.BackgroundColor3 = Theme.Main
+                DFrame.BackgroundColor3 = Theme.Section
                 DFrame.BackgroundTransparency = BgAlpha
                 DFrame.ClipsDescendants = true
                 DFrame.Parent = ItemContainer
